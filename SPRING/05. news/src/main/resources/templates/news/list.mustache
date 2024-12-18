@@ -1,0 +1,22 @@
+{{>layouts/header}}
+<div class="container mt-4">
+    <ul class="list-group">
+        {{#newsPage.content}}
+            <li class="list-group-item">
+                <h4 class="mb-2"><a href="/news/{{newsId}}">제목 : {{title}}</a></h4>
+                <small class="text-muted">News ID: {{newsId}}</small>
+            </li>
+        {{/newsPage.content}}
+        <br>
+        <a href="/news/new">Create News</a>
+        <ul class="pagination justify-content-center">
+            {{#hasPrev}}
+                <a class="page-link" href="?page={{prev}}">Previous</a>
+            {{/hasPrev}}
+            {{#hasNext}}
+                <a class="page-link" href="?page={{next}}">Next</a>
+            {{/hasNext}}
+        </ul>
+    </ul>
+</div>
+{{>layouts/footer}}
